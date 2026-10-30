@@ -1,0 +1,211 @@
+/* ==========================================================================
+   SIGNAL AI - Premium Dark Red, Orange & Obsidian Quantitative Interface
+   Reference: Modern Glassmorphic Autonomous Trading Hub
+   ========================================================================== */
+
+:root {
+  --bg-deep: #07080b;
+  --bg-surface: #0e111a;
+  --bg-card: rgba(17, 21, 31, 0.75);
+  --bg-card-hover: rgba(24, 29, 44, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(249, 115, 22, 0.4);
+  
+  --accent-orange: #f97316;
+  --accent-orange-glow: rgba(249, 115, 22, 0.35);
+  --accent-red: #ef4444;
+  --accent-dark-red: #991b1b;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #10b981;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(185, 28, 28, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(234, 88, 12, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Card Panels */
+.signal-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.signal-card:hover {
+  border-color: rgba(249, 115, 22, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(234, 88, 12, 0.08);
+}
+
+/* Radiant Orange Buttons */
+.btn-signal-orange {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-signal-orange:hover {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  box-shadow: 0 6px 24px rgba(234, 88, 12, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Circular Market Sentiment Ring Gauge */
+.sentiment-gauge-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 0 auto;
+}
+
+.sentiment-gauge-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 14;
+}
+
+.gauge-progress {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s ease-in-out, stroke 0.4s ease;
+  filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.45));
+}
+
+.gauge-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Pill Badges */
+.badge-buy {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-sell {
+  background: rgba(239, 68, 68, 0.14);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-running {
+  background: rgba(249, 115, 22, 0.14);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+/* Floating AI Assistant Bar at Bottom */
+.floating-ai-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: min(680px, calc(100vw - 32px));
+  background: rgba(14, 17, 26, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 35px rgba(234, 88, 12, 0.25);
+  border-radius: 9999px;
+  padding: 6px 10px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-ai-bar:focus-within {
+  border-color: rgba(249, 115, 22, 0.7);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8), 0 0 50px rgba(234, 88, 12, 0.4);
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Tab Active Styles */
+.nav-tab-pill {
+  transition: all 0.2s ease;
+}
+
+.nav-tab-pill.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Voice Assistant Wave Bars */
+@keyframes voice-wave {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; }
+}
+
+.voice-wave-bar {
+  width: 3px;
+  border-radius: 9999px;
+  background: #f97316;
+  display: inline-block;
+  animation: voice-wave 1s ease-in-out infinite;
+}
+
+.voice-wave-bar:nth-child(1) { animation-delay: 0.0s; height: 6px; }
+.voice-wave-bar:nth-child(2) { animation-delay: 0.2s; height: 14px; }
+.voice-wave-bar:nth-child(3) { animation-delay: 0.4s; height: 20px; }
+.voice-wave-bar:nth-child(4) { animation-delay: 0.15s; height: 12px; }
+.voice-wave-bar:nth-child(5) { animation-delay: 0.35s; height: 8px; }
+
+@keyframes mic-listening-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+.mic-active-pulse {
+  animation: mic-listening-pulse 1.6s infinite;
+}
+
+/* Financial Number Alignment */
+.font-mono {
+  font-feature-settings: "tnum" 1, "zero" 1;
+}

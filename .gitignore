@@ -1,0 +1,17 @@
+# MANTHAN 2026 Git Ignore Rules
+# Never commit tokens or environment credentials
+.env
+*.token
+*.key
+
+# Python Bytecode and Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+
+# IDE settings
+.vscode/*
+!.vscode/settings.json
+
